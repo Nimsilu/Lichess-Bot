@@ -9,11 +9,11 @@ engine:                                   # Engine settings.
     enabled: true                        # Activate opening books.
     books:
       white:                              # List of names of books to use as white.
-        - "whitestrongest"
+        - "allplay"
       black:                              # List of names of books to use as black.
         - "Cerebellum3Merge"
       standard:                           # List of names of books to use if there is no specific book for white, black or chess960.
-        - "Cerebellum3Merge" 
+        - "whitestrongest" 
 #     chess960:                           # List of names of books to use for Chess960.
 #       - "Chess960Book"
     selection: "best_move"          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
@@ -43,10 +43,10 @@ engine:                                   # Engine settings.
     consecutive_moves: 5                  # How many moves in a row the score has to be below the resign value.
   uci_options:                            # Arbitrary UCI options passed to the engine. (Commenting allowed)
     Move Overhead: 400                    # Increase if your bot flags games too often.
-    Threads: 5                            # Max CPU threads the engine can use.
+    Threads: 7                            # Max CPU threads the engine can use.
     Hash: 199                             # Max memory (in megabytes) the engine can allocate.
     MultiPV: 71
-    Slow Mover: 80
+    Slow Mover: 100
 #   SyzygyPath: "/path/to/syzygy"         # Path to your local syzygy endgame tablebases
 
 move_overhead_multiplier: 5.3             # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
@@ -94,3 +94,4 @@ books:                                    # Names of the opening books (to be us
   Goi5.1: "./Goi5.1.bin"
   Cerebellum3Merge: "./Cerebellum3Merge.bin"
   whitestrongest: "./engines/whitestrongest.bin"
+  allplay: "./engines/allplay.bin"
